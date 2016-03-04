@@ -1,0 +1,11 @@
+<h1>Categories For: <%= @todo.name %> </h1>
+
+  <% if @todos.any? %>
+    <% @todos.each do |todo| %>
+    <%= todo.name %>
+  <% end %>
+  <% else %>
+    <h3> 'Nothing In List' </h3>
+  <% end %>
+
+  <%= link_to 'New Category', categories_new_path(@todo) %>

@@ -1,0 +1,13 @@
+<h1>Things to do</h1>
+
+<% if @todos.any? %>
+  <% @todos.each do |todo| %>
+    <h5><%= todo.item %></h5>
+    <p><%= link_to 'Details', todo_path(todo) %></p>
+    <p><%= link_to 'Edit List Item', edit_todo_path(todo) %></p>
+    <p><%= link_to 'Delete Item', todo_path(todo), method: :delete %></p>
+  <% end %>
+<% else %>
+  <h3> No items in your list currently </h3>
+<% end %>
+<p><%= link_to 'Add to List', new_todo_path %></p>

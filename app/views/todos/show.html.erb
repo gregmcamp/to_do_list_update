@@ -1,0 +1,20 @@
+<h1>Things to Do</h1>
+
+
+<h2><%= @todo.item %></h2>
+<h2><%= @todo.completed %></h2>
+<h2><%= @todo.date %></h2>
+<% if @categories %>
+  <ul>
+  <% @categories.each do |category| %>
+    <li>
+      <%= category.name %>
+    </li>
+  <% end %>
+  </ul>
+<% else %> 
+  <p> No Current Categories </p>
+<% end %>
+
+<%= link_to 'Back', todos_path %>
+<%= link_to 'Add Category', new_todo_category_path(@todo) %>
